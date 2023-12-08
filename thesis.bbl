@@ -1,3 +1,76 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{RLBook}
+Richard~S. Sutton and Andrew~G. Barto.
+\newblock {\em Reinforcement learning : an introduction}.
+\newblock {MIT} Press, 2nd ed edition.
+
+\bibitem{hua2021learning}
+Jiang Hua, Liangcai Zeng, Gongfa Li, and Zhaojie Ju.
+\newblock Learning for a robot: Deep reinforcement learning, imitation
+  learning, transfer learning.
+\newblock {\em Sensors}, Vol.~21, No.~4, p. 1278, 2021.
+
+\bibitem{dinh2016density}
+Laurent Dinh, Jascha Sohl-Dickstein, and Samy Bengio.
+\newblock Density estimation using real nvp.
+\newblock {\em arXiv preprint arXiv:1605.08803}, 2016.
+
+\bibitem{singh2020parrot}
+Avi Singh, Huihan Liu, Gaoyue Zhou, Albert Yu, Nicholas Rhinehart, and Sergey
+  Levine.
+\newblock Parrot: Data-driven behavioral priors for reinforcement learning.
+\newblock {\em arXiv preprint arXiv:2011.10024}, 2020.
+
+\bibitem{pertsch2021accelerating}
+Karl Pertsch, Youngwoon Lee, and Joseph Lim.
+\newblock Accelerating reinforcement learning with learned skill priors.
+\newblock In {\em Conference on robot learning}, pp. 188--204. PMLR, 2021.
+
+\bibitem{kumar2014real}
+Vikash Kumar, Yuval Tassa, Tom Erez, and Emanuel Todorov.
+\newblock Real-time behaviour synthesis for dynamic hand-manipulation.
+\newblock In {\em 2014 IEEE International Conference on Robotics and Automation
+  (ICRA)}, pp. 6808--6815. IEEE, 2014.
+
+\bibitem{ahn2020robel}
+Michael Ahn, Henry Zhu, Kristian Hartikainen, Hugo Ponte, Abhishek Gupta,
+  Sergey Levine, and Vikash Kumar.
+\newblock Robel: Robotics benchmarks for learning with low-cost robots.
+\newblock In {\em Conference on robot learning}, pp. 1300--1313. PMLR, 2020.
+
+\bibitem{shaw2023leap}
+Kenneth Shaw, Ananye Agarwal, and Deepak Pathak.
+\newblock Leap hand: Low-cost, efficient, and anthropomorphic hand for robot
+  learning.
+\newblock {\em arXiv preprint arXiv:2309.06440}, 2023.
+
+\bibitem{SAC1}
+Tuomas Haarnoja, Aurick Zhou, Pieter Abbeel, and Sergey Levine.
+\newblock Soft actor-critic: Off-policy maximum entropy deep reinforcement
+  learning with a stochastic actor.
+\newblock In {\em Proceedings of the 35th International Conference on Machine
+  Learning}, pp. 1861--1870. {PMLR}.
+\newblock {ISSN}: 2640-3498.
+
+\bibitem{SAC2}
+Tuomas Haarnoja, Aurick Zhou, Kristian Hartikainen, George Tucker, Sehoon Ha,
+  Jie Tan, Vikash Kumar, Henry Zhu, Abhishek Gupta, Pieter Abbeel, and Sergey
+  Levine.
+\newblock Soft actor-critic algorithms and applications.
+
+\bibitem{DoubleQ}
+Scott Fujimoto, Herke Hoof, and David Meger.
+\newblock Addressing function approximation error in actor-critic methods.
+\newblock In {\em Proceedings of the 35th International Conference on Machine
+  Learning}, pp. 1587--1596. {PMLR}.
+\newblock {ISSN}: 2640-3498.
+
+\bibitem{Mujoco}
+Emanuel Todorov, Tom Erez, and Yuval Tassa.
+\newblock {MuJoCo}: A physics engine for model-based control.
+\newblock In {\em 2012 {IEEE}/{RSJ} International Conference on Intelligent
+  Robots and Systems}, pp. 5026--5033.
+\newblock {ISSN}: 2153-0866.
 
 \end{thebibliography}

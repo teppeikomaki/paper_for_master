@@ -1,5 +1,5 @@
 %%
-%% ampbt.cls: 京都大学工学部情報学科数理工学コース 特別研究報告書 クラスファイル
+%% ampbt.cls: 京都大学情報学研究科システム科学専攻 特別研究報告書 クラスファイル
 %%
 \NeedsTeXFormat{pLaTeX2e}
 \ProvidesClass{ampbt}[2019/04/01 Bachelor's Thesis Class for KUAMP]
@@ -110,8 +110,8 @@
   \vspace*{17mm}
   \begin{center}
     {\Large
-      京都大学工学部情報学科\\
-      数理工学コース\\
+      京都大学情報学研究科\\
+      システム科学専攻\\
       \nengetsu{\amp@entranceyear}{\amp@entrancemonth}入学\\
 
       \vspace{14mm}%

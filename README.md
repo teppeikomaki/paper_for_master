@@ -20,7 +20,7 @@ $pdf_mode = 3;
 ```
 ```
 $ docker run --rm -it -v $PWD:/workdir paperist/texlive-ja:latest \
-    sh -c 'latexmk -C main.tex && latexmk main.tex && latexmk -c main.tex'
+    sh -c 'latexmk -C thesis.tex && latexmk thesis.tex && latexmk -c thesis.tex'
 ```
 
 ## VSCode LaTeX Workshop で使う
