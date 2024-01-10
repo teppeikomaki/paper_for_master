@@ -62,6 +62,8 @@ INPUT ./algorithm.sty
 INPUT algorithm.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/float/float.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/doublestroke/dsfont.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/doublestroke/dsfont.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/caption/subcaption.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/caption/subcaption.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption.sty
@@ -152,8 +154,17 @@ INPUT ./asset/img/dclaw.pdf
 INPUT ./asset/img/dclaw.pdf
 INPUT ./asset/img/dclaw.pdf
 INPUT extractbb -B cropbox -O asset/img/dclaw.pdf
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/doublestroke/Udsrom.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/doublestroke/Udsrom.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/doublestroke/Udsrom.fd
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/doublestroke/dsrom10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm
 INPUT ./thesis.bbl
 INPUT ./thesis.bbl
 INPUT thesis.bbl
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/doublestroke/dsrom12.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/doublestroke/dsrom10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm
 INPUT thesis.aux
