@@ -9,6 +9,7 @@
 \contentsline {subsection}{\numberline {3.2}Soft Actor-Critic法（分割する）}{3}{}%
 \contentsline {subsection}{\numberline {3.3}変分オートエンコーダー}{5}{}%
 \contentsline {subsection}{\numberline {3.4}スキルとその事前分布の学習}{5}{}%
+\contentsline {subsection}{\numberline {3.5}提案するフレームワーク}{6}{}%
 \contentsline {section}{\numberline {4}実験}{6}{}%
 \contentsline {subsection}{\numberline {4.1}実験のセットアップ}{6}{}%
 \contentsline {subsubsection}{\numberline {4.1.1}3指ハンドロボット：D'Claw}{6}{}%
