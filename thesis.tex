@@ -214,7 +214,7 @@ Pertschらが提案したSPiRLは事前に収集したデータからスキル�
 \subsubsection{3指ハンドロボット：D'Claw}
 \begin{figure}[hbtp]
   \centering
-  \includegraphics[height=3.5cm]
+  \includegraphics[height=6cm]
        {asset/img/dclaw.pdf}
   \caption{D'Clawの概要．FF-10$\sim$Thumb-32までの角度を$\theta^1_{\textrm{j}}\sim\theta^9_{\textrm{j}}$とし，$\boldsymbol{\theta}_{\textrm{j}}=(\theta^1_{\textrm{j}},\cdots,\theta^9_{\textrm{j}})$とおく．また，バルブの角度を$\theta^{\textrm{v}}$のように表記する．\cite{ahn2020robel}より引用．}
   \label{dclaw_structure}
@@ -222,23 +222,42 @@ Pertschらが提案したSPiRLは事前に収集したデータからスキル�
  
 本研究ではオープンソースロボットプラットフォームRobelのハンドロボットD'Clawで実験する\cite{ahn2020robel}．D'Clawの構造は図\ref{dclaw_structure}に示している．D'Clawは3本の指を持ち，各指にはそれぞれ3つずつの関節，合わせて9つの関節が存在する．3本の指が持つ3つ関節の可動域はそれぞれ異なる．全関節が鉛直方向に垂れ下がった姿勢を中心とし前後に同角度の可動域を持ち，根本から$27.5^\circ,60^\circ,90^\circ$ずつ動かすことができる．\\
 %%% (-27.5~27.5)であることが伝わっていなさそう．\\
-ロボットの行動空間はロボットの関節の数と同じ9次元であり，各関節の目標角度を可動域の大きさで$[-1,1]$の範囲にスケールしたものを入力とする位置制御である．状態空間は以下のように関節の角度$\boldsymbol{\theta}^{\textrm{j}}$，1ステップ前に実行した行動$\dot{\boldsymbol{\theta^{\textrm{j}}}}$，バルブの角度の余弦$\textrm{cos}(\theta^{\textrm{v}})$，バルブの角度の正弦$\textrm{sin}(\theta^{\textrm{v}})$，バルブの角度と目標角度の誤差$\theta^{\textrm{v}} - \hat{\theta}^{\textrm{v}}$の合計21次元からなる．
+ロボットの行動空間はロボットの関節の数と同じ9次元であり，各関節の目標角度を可動域の大きさで$[-1,1]$の範囲にスケールしたものを入力とする制御周期0.1sの位置制御である．状態空間は以下のように関節の角度$\boldsymbol{\theta}^{\textrm{j}}$，1ステップ前に実行した行動$\dot{\boldsymbol{\theta^{\textrm{j}}}}$，バルブの角度の余弦$\textrm{cos}(\theta^{\textrm{v}})$，バルブの角度の正弦$\textrm{sin}(\theta^{\textrm{v}})$，バルブの角度と目標角度の誤差$\theta^{\textrm{v}} - \hat{\theta}^{\textrm{v}}$の合計21次元からなる．\\
 \begin{eqnarray}\label{state}
   s_t = \left(\boldsymbol{\theta}^{\textrm{j}},\dot{\boldsymbol{\theta^{\textrm{j}}}},\textrm{cos}(\theta^{\textrm{v}}),\textrm{sin}(\theta^{\textrm{v}}),\theta^{\textrm{v}} - \hat{\theta}^{\textrm{v}}\right) \nonumber \\ 
 \end{eqnarray}
-また，本研究ではバルブの角度をを目標角度に合わせる位置合わせタスク(Turnタスク)を行う．Turnタスクではバルブの初期位置は固定されており，バルブを反時計回りに90度回転させることが目標である．このようなタスクを達成するための報酬としてはD'Calwの論文と同一のものを利用する．この報酬はバルブの角度と目標角度の誤差$\Delta\theta_{t,obj}$，ロボットの関節角度と基準姿勢との差分$|\boldsymbol{\theta}_{nominal}-\boldsymbol{\theta}_t|$，ロボットの関節速度$\dot{\boldsymbol{\theta}}$を用いて以下のように設計されている．
+また，本研究ではバルブの角度をを目標角度に合わせる位置合わせタスク(Turnタスク)を行う．Turnタスクではバルブの初期位置は固定されており，バルブを反時計回りに90度回転させることが目標である．このようなタスクを達成するための報酬としてはD'Calwの論文と同一のものを利用する．この報酬はバルブの角度と目標角度の誤差$\Delta\theta_{t,obj}$，ロボットの関節角度と基準姿勢との差分$|\boldsymbol{\theta}_{nominal}-\boldsymbol{\theta}_t|$，ロボットの関節速度$\dot{\boldsymbol{\theta}}$を用いて以下のように設計されている．\\
 \begin{eqnarray}\label{reward}
   r_t = −5|\Delta\theta_{t,obj}| + \|\boldsymbol{\theta}_{nominal}-\boldsymbol{\theta}_t\| -\|\dot{\boldsymbol{\theta}}\| + 10\mathds{1}(\Delta\theta_{t,obj} < 0.25) + 50\mathds{1}(\Delta\theta_{t,obj} < 0.1)
 \end{eqnarray}
 
 \subsubsection{シミュレーション環境}
-このロボットをシミュレーションで学習するにあたって，オープンソースの物理エンジンであるMuJoCoを利用する\cite{Mujoco}．
+ロボットの低次元行動空間を獲得するための事前方策収集のためシミュレーション環境で学習を行う．シミュレーションでの学習には，オープンソースの物理エンジンであるMuJoCoを利用する\cite{Mujoco}．シミュレーションではロボットの各関節はPD制御によって制御されている．Pゲインは Dゲインはであり，バルブのダンピング係数は0.01に設定した．
+
+%%% 5種類のバルブについて画像を貼る．
+
+\begin{figure}[hbtp]
+  \centering
+  \includegraphics[height=10cm]
+       {asset/img/dclaw_mujoco.pdf}
+  \caption{物理エンジンMuJoCo上でのD'Claw．}
+  \label{dclaw_mujoco}
+\end{figure}
+
+
 
 \subsubsection{実機の設定}
-アクチュエータとしてDynamixel XM430-W210を利用する．
+シミュレーター上で獲得した行動の低次元表現を用いて実機でのTurnタスクを学習する．図\ref{dclaw_hardware}に実機の写真を示す．実機は9つの関節を持ち，各関節とバルブの固定部にはアクチュエータが存在する．アクチュエータとしてはDynamixel XM430-W210を利用する．アクチュエータはPD位置制御で動作し，Pゲインは800，Dゲインは8000に設定している．また，ロボットの指先やバルブは3Dプリンターで作成したものであり，指先や3本足バルブのCADデータはRobelの公式サイトhttps://sites.google.com/view/roboticsbenchmarksで公開されているものを用いた．箱型バルブなどはどのようにして印刷した？
 %%% 引用：https://emanual.robotis.com/docs/en/dxl/x/xm430-w210/ webサイトを引用する際のbibtexの記載は？
+\begin{figure}[hbtp]
+  \centering
+  \includegraphics[height=10cm]
+       {asset/img/dclaw_hardware.pdf}
+  \caption{D'Clawの実機．}
+  \label{dclaw_hardware}
+\end{figure}
 
-
+%%% バルブの画像を貼る．
 
 
 \subsection{実験データの収集}

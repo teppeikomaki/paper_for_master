@@ -160,6 +160,14 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/doublestroke/dsrom10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm
+INPUT ./asset/img/dclaw_mujoco.pdf
+INPUT ./asset/img/dclaw_mujoco.pdf
+INPUT ./asset/img/dclaw_mujoco.pdf
+INPUT extractbb -B cropbox -O asset/img/dclaw_mujoco.pdf
+INPUT ./asset/img/dclaw_hardware.pdf
+INPUT ./asset/img/dclaw_hardware.pdf
+INPUT ./asset/img/dclaw_hardware.pdf
+INPUT extractbb -B cropbox -O asset/img/dclaw_hardware.pdf
 INPUT ./thesis.bbl
 INPUT ./thesis.bbl
 INPUT thesis.bbl
