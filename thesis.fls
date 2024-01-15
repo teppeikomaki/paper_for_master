@@ -168,6 +168,10 @@ INPUT ./asset/img/dclaw_hardware.pdf
 INPUT ./asset/img/dclaw_hardware.pdf
 INPUT ./asset/img/dclaw_hardware.pdf
 INPUT extractbb -B cropbox -O asset/img/dclaw_hardware.pdf
+INPUT ./asset/img/SimTurn90.pdf
+INPUT ./asset/img/SimTurn90.pdf
+INPUT ./asset/img/SimTurn90.pdf
+INPUT extractbb -B cropbox -O asset/img/SimTurn90.pdf
 INPUT ./thesis.bbl
 INPUT ./thesis.bbl
 INPUT thesis.bbl

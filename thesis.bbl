@@ -11,22 +11,6 @@ Jiang Hua, Liangcai Zeng, Gongfa Li, and Zhaojie Ju.
   learning, transfer learning.
 \newblock {\em Sensors}, Vol.~21, No.~4, p. 1278, 2021.
 
-\bibitem{dinh2016density}
-Laurent Dinh, Jascha Sohl-Dickstein, and Samy Bengio.
-\newblock Density estimation using real nvp.
-\newblock {\em arXiv preprint arXiv:1605.08803}, 2016.
-
-\bibitem{singh2020parrot}
-Avi Singh, Huihan Liu, Gaoyue Zhou, Albert Yu, Nicholas Rhinehart, and Sergey
-  Levine.
-\newblock Parrot: Data-driven behavioral priors for reinforcement learning.
-\newblock {\em arXiv preprint arXiv:2011.10024}, 2020.
-
-\bibitem{pertsch2021accelerating}
-Karl Pertsch, Youngwoon Lee, and Joseph Lim.
-\newblock Accelerating reinforcement learning with learned skill priors.
-\newblock In {\em Conference on robot learning}, pp. 188--204. PMLR, 2021.
-
 \bibitem{kumar2014real}
 Vikash Kumar, Yuval Tassa, Tom Erez, and Emanuel Todorov.
 \newblock Real-time behaviour synthesis for dynamic hand-manipulation.
@@ -44,6 +28,22 @@ Kenneth Shaw, Ananye Agarwal, and Deepak Pathak.
 \newblock Leap hand: Low-cost, efficient, and anthropomorphic hand for robot
   learning.
 \newblock {\em arXiv preprint arXiv:2309.06440}, 2023.
+
+\bibitem{dinh2016density}
+Laurent Dinh, Jascha Sohl-Dickstein, and Samy Bengio.
+\newblock Density estimation using real nvp.
+\newblock {\em arXiv preprint arXiv:1605.08803}, 2016.
+
+\bibitem{singh2020parrot}
+Avi Singh, Huihan Liu, Gaoyue Zhou, Albert Yu, Nicholas Rhinehart, and Sergey
+  Levine.
+\newblock Parrot: Data-driven behavioral priors for reinforcement learning.
+\newblock {\em arXiv preprint arXiv:2011.10024}, 2020.
+
+\bibitem{pertsch2021accelerating}
+Karl Pertsch, Youngwoon Lee, and Joseph Lim.
+\newblock Accelerating reinforcement learning with learned skill priors.
+\newblock In {\em Conference on robot learning}, pp. 188--204. PMLR, 2021.
 
 \bibitem{SAC1}
 Tuomas Haarnoja, Aurick Zhou, Pieter Abbeel, and Sergey Levine.
