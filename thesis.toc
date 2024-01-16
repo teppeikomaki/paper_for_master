@@ -15,13 +15,13 @@
 \contentsline {subsection}{\numberline {4.1}実験のセットアップ}{6}{}%
 \contentsline {subsubsection}{\numberline {4.1.1}3指ハンドロボット：D'Claw}{6}{}%
 \contentsline {subsubsection}{\numberline {4.1.2}シミュレーション環境}{7}{}%
-\contentsline {subsubsection}{\numberline {4.1.3}実機の設定}{7}{}%
-\contentsline {subsection}{\numberline {4.2}事前方策の収集}{9}{}%
+\contentsline {subsubsection}{\numberline {4.1.3}実機の設定}{8}{}%
+\contentsline {subsection}{\numberline {4.2}事前方策の収集}{8}{}%
 \contentsline {subsection}{\numberline {4.3}低次元行動空間の抽出}{9}{}%
 \contentsline {subsection}{\numberline {4.4}実験1：同一形状のバルブの学習(シミュレーション)}{9}{}%
-\contentsline {subsection}{\numberline {4.5}実験2：異なる形状のバルブへの転移(シミュレーション)}{9}{}%
-\contentsline {subsection}{\numberline {4.6}実験3：同一形状のバルブの学習(実機)}{11}{}%
-\contentsline {subsection}{\numberline {4.7}実験4：異なる形状のバルブへの転移(実機)}{11}{}%
-\contentsline {section}{\numberline {5}議論}{11}{}%
-\contentsline {section}{\numberline {6}結論}{11}{}%
-\contentsline {section}{参考文献}{11}{}%
+\contentsline {subsection}{\numberline {4.5}実験2：異なる形状のバルブへの転移(シミュレーション)}{10}{}%
+\contentsline {subsection}{\numberline {4.6}実験3：同一形状のバルブの学習(実機)}{10}{}%
+\contentsline {subsection}{\numberline {4.7}実験4：異なる形状のバルブへの転移(実機)}{10}{}%
+\contentsline {section}{\numberline {5}議論}{10}{}%
+\contentsline {section}{\numberline {6}結論}{10}{}%
+\contentsline {section}{参考文献}{10}{}%
