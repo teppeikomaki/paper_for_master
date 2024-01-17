@@ -150,6 +150,10 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-h.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-h.tfm
+INPUT ./asset/img/schematic_figure.pdf
+INPUT ./asset/img/schematic_figure.pdf
+INPUT ./asset/img/schematic_figure.pdf
+INPUT extractbb -B cropbox -O asset/img/schematic_figure.pdf
 INPUT ./asset/img/dclaw.pdf
 INPUT ./asset/img/dclaw.pdf
 INPUT ./asset/img/dclaw.pdf
