@@ -79,7 +79,7 @@
 本研究ではこのような〜〜〜を用いて複数の形状のバルブを短時間で学習させる．\\
 (実験結果)\\
 
-
+\clearpage
 \section{関連研究}\label{sec-related_papers}
 %%% オプションやdownstreamの話を入れ込む形で修正する．
 
@@ -108,6 +108,7 @@
 \subsection{事前データを用いた強化学習}
 事前に収集したデータから複数のタスクの学習を効率化するための手段として，スキルの事前学習が研究されている．スキルの事前学習では，情報が付加されていないデータを収集し，そのデータからスキルを抽出する．その後，抽出したスキルを行動として利用することで学習する．Singhらは，正規化フロー法\cite{dinh2016density}を用いて標準正規分布に従うノイズベクトルを行動ベクトルへ射影することで，学習速度を向上させる行動の事前分布を獲得した\cite{singh2020parrot}．また，Pertschらは，事前に収集したデータから行動の系列をサンプリングし，変分オートエンコーダ(VAE)によってサンプリングした系列の再構成学習を行うことで，スキルを潜在空間上に埋め込み高速な学習を実現する手法を開発した\cite{pertsch2021accelerating}．本研究では事前に収集したデータからスキルを抽出することでハンドロボットの回転タスクについて，未知のタスクに対する学習速度を向上させる手法を検討する．
 
+\clearpage
 \section{手法}\label{sec-method}
 \subsection{強化学習(整理し直す)}
 本研究ではロボットの制御問題をマルコフ決定過程$\mathcal{M} = (\mathcal{S},\mathcal{A},p,r)$によってモデリングする．$\mathcal{S}$，$\mathcal{A}$はそれぞれ状態空間，行動空間を意味しており，現在の状態$s_t \in \mathcal{S}$で行動$a_t \in \mathcal{A}$をとった時に状態$s_{t+1}\in\mathcal{S}$へと遷移する状態遷移確率を$ p:\mathcal{S}\times\mathcal{A}\times\mathcal{S}\rightarrow[0,1]$，この時エージェントが得る報酬を $r:\mathcal{S}\times\mathcal{A}\rightarrow\mathbb{R}$と表す．また，方策$\pi(a_t|s_t)$に従って行動した際に得られる状態と行動の系列において，$s_t$が表れる確率を$\rho_\pi(s_t)$，$s_t$と$a_t$が同時に表れる確率を$\rho_\pi(s_t,a_t)$，デモンストレーションデータの中に$s_t$と$a_t$が同時に現れる確率を$\rho_D(s_t,a_t)$ と表記する．\\
@@ -193,7 +194,53 @@ soft-Q関数を実装する際は，SACでは方策改善における正のバ�
   J(\alpha) = \mathbb{E}_{a_t\sim\pi_t}[-\alpha \log{\pi_t(a_t|s_t)} -\alpha\bar{\mathcal{H}}].
 \end{equation}
 
-\subsection{変分オートエンコーダー}
+\subsection{変分自己符号化器}
+
+%%% 基本的な説明と潜在変数モデル
+% VAEがニューラルネットワークを用いた生成モデルである．
+% 教師なし学習
+% 潜在変数モデル
+変分自己符号化器(VAE)は，ニューラルネットワークを用いた代表的な生成モデルのアルゴリズムであり，画像処理などの分野で利用されてきた．VAEはその名の通り自己符号化器と類似した構造を持つ教師なし学習アルゴリズムである．VAEは訓練データを潜在変数として抽象化し，抽象化した潜在変数からもとの訓練データに復元することを学習し，これによって訓練データ全体の確率分布とそれらの抽象的な特徴表現を獲得する．\\
+%%% VAEの学習メカニズム
+% 生成モデルにおける目的関数
+VAEはあるデータセット$\mathcal{D}=\{\boldsymbol{x}_i\}^{N}_{i=1}$を生成するような確率分布$p(\boldsymbol{x})$を近似する生成モデル$p_\theta(\boldsymbol{x})$の獲得を目指す．このような確率分布を学習するにあたって，$\boldsymbol{x}$がある潜在変数$\boldsymbol{z}\sim p(\boldsymbol{z})$に従って生成されると仮定する．このとき，事後確率分布$p(\boldsymbol{z}|\boldsymbol{x})$をパラメータ$\phi$を用いて$q_\phi(\boldsymbol{z}|\boldsymbol{x})$のように近似することを考えると，生成モデルは以下のように変形できる．
+
+\begin{equation} \label{latent_val}
+  \log{p_\theta(\boldsymbol{x})} = D_{KL}(q_\phi(\boldsymbol{z}|\boldsymbol{x})||p_\theta(\boldsymbol{z}|\boldsymbol{x})) + \mathcal{L}(\theta, \phi; \boldsymbol{x})
+\end{equation}
+
+右辺の第1項は0以上であることから，$\log{p_\theta(\boldsymbol{x})} \geq \mathcal{L}(\theta, \phi; \boldsymbol{x})$が成り立つため，$p_\theta(\boldsymbol{x})$の代わりに
+\begin{equation} \label{ELBO}
+  \mathcal{L}(\theta, \phi; \boldsymbol{x}) = \mathbb{E}_{q_\phi(\boldsymbol{z}|\boldsymbol{x})}[\log{p_\theta(\boldsymbol{x}|\boldsymbol{z})}]-D_{KL}(q_\phi(\boldsymbol{z}|\boldsymbol{x})||p_\theta(\boldsymbol{z}))
+\end{equation}
+を最大化することで生成モデルを獲得できる．このような$\mathcal{L}(\theta, \phi; \boldsymbol{x})$のことをエビデンス下界(ELBO)と呼ぶ．\\
+% エンコーダとデコーダ
+パラメータ表示された尤度$p_\theta(\boldsymbol{x}|\boldsymbol{z})$と近似事後確率分布$q_\phi(\boldsymbol{z}|\boldsymbol{x})$はニューラルネットワークで表現される．尤度$p_\theta(\boldsymbol{x}|\boldsymbol{z})$は潜在変数$\boldsymbol{z}$を入力すると再構成された$\boldsymbol{x}$を出力するネットワークでありデコーダと呼ばれる．また，近似事後確率分布は$\boldsymbol{x}$を入力すると，潜在変数$\boldsymbol{z}$の平均$\mu_{\boldsymbol{z}}(\boldsymbol{x})$と分散の対数$\log{\sigma_{\boldsymbol{z}}^2(\boldsymbol{x})}$を出力するネットワークで，エンコーダと呼ばれる．潜在変数$\boldsymbol{z}$は標準正規分布$\mathcal{N}(0,\boldsymbol{I})$に従う確率変数であり，エンコーダでは標準正規分布に従う変数$\boldsymbol{\varepsilon} \sim \mathcal{N}(0,\boldsymbol{I})$を用いて
+\begin{equation} \label{VAE_latent_val}
+\boldsymbol{z} = \mu_{\boldsymbol{z}}(\boldsymbol{x}) + \sigma_{\boldsymbol{z}}(\boldsymbol{x}) * \boldsymbol{\varepsilon}
+\end{equation}
+のように計算する．\\
+% 損失関数
+このとき，ELBOの第1項は
+\begin{equation} \label{ELBO_RHS_1}
+  \mathbb{E}_{q_\phi(\boldsymbol{z}|\boldsymbol{x})}[\log{p_\theta(\boldsymbol{x}|\boldsymbol{z})}] = \mathbb{E}_{\boldsymbol{\varepsilon} \sim \mathcal{N}(0,\boldsymbol{I})} [\log{p(x|\mu_{\boldsymbol{z}}(\boldsymbol{x}) + \sigma_{\boldsymbol{z}}(\boldsymbol{x}) * \boldsymbol{\varepsilon})}]
+\end{equation}
+のようにサンプリングを用いて計算され，第2項は
+\begin{equation} \label{ELBO_RHS_2}
+  D_{KL}(q_\phi(\boldsymbol{z}|\boldsymbol{x})||p_\theta(\boldsymbol{z})) = -1/2 \sum^N_{i=1}\log{{\sigma_{\boldsymbol{z}}^2(\boldsymbol{x_i})}} - 1 + \mu_{\boldsymbol{z}}^2(\boldsymbol{x_i}) + \sigma_{\boldsymbol{z}}^2(\boldsymbol{x_i})
+\end{equation}
+のように解析的に計算できる．
+
+%%% VAEと研究の関連性
+% VAEが義手や多指ハンドロボットの研究においてどのように応用されるか
+% 今回の研究においてVAEはどのように利用されるか．
+・義手をはじめとする多指ハンドロボットの研究において，VAEは多次元の制御入力を低次元に圧縮するため利用される\ref{}\ref{}．
+
+本研究では変分オートエンコーダの学習によって獲得した潜在空間を強化学習における行動空間として利用することで効率的な強化学習を実現する．
+
+
+VAEでは行動ベクトルを低次元に圧縮可能
+<- VAEはニューラルネットを用いた非線形のフレームワークで，誤差を小さくできる．
 
 
 \subsection{スキルとその事前分布の学習}
@@ -224,7 +271,7 @@ Pertschらが提案したSPiRLは事前に収集したデータからスキル�
   \label{dclaw_structure}
 \end{figure}
 
-
+\clearpage
 \section{実験}\label{sec-experiment}
 前項で提案したフレームワークの性能を3指ハンドロボットのシミュレーション，および実機実験を通じて検証する．シミュレーション，実機ともに複数種類のバルブについて学習を行い，様々な形状のバルブにおいてこのフレームワークが有効であることを示す．
 
@@ -310,7 +357,7 @@ Pertschらが提案したSPiRLは事前に収集したデータからスキル�
 ・まず，3本足バルブの方策をそのまま持っていくとどうなるかをまず．\\
 ・4種類のバルブについてSACのみ・ファインチューニングと比較．\\
 
-\begin{figure}[hbtp]
+\begin{figure}[H]
   \centering
   \includegraphics[width=16cm]
        {asset/img/SimTurn90.pdf}
@@ -335,9 +382,10 @@ Pertschらが提案したSPiRLは事前に収集したデータからスキル�
 実機ならではの図がほしい．
 
 
-
+\clearpage
 \section{議論}\label{sec-discussion}
 
+\clearpage
 \section{結論}\label{sec-conclusion}
 
 
