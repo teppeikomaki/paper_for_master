@@ -9,7 +9,7 @@
 \contentsline {subsection}{\numberline {3.2}エントロピー最大強化学習}{4}{}%
 \contentsline {subsection}{\numberline {3.3}Soft Actor-Critic法（分割する）}{4}{}%
 \contentsline {subsection}{\numberline {3.4}変分自己符号化器}{5}{}%
-\contentsline {subsection}{\numberline {3.5}スキルとその事前分布の学習}{7}{}%
+\contentsline {subsection}{\numberline {3.5}低次元行動空間の抽出}{7}{}%
 \contentsline {subsection}{\numberline {3.6}提案するフレームワーク}{7}{}%
 \contentsline {section}{\numberline {4}実験}{9}{}%
 \contentsline {subsection}{\numberline {4.1}実験のセットアップ}{9}{}%
