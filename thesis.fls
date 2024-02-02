@@ -172,10 +172,26 @@ INPUT ./asset/img/dclaw_hardware.pdf
 INPUT ./asset/img/dclaw_hardware.pdf
 INPUT ./asset/img/dclaw_hardware.pdf
 INPUT extractbb -B cropbox -O asset/img/dclaw_hardware.pdf
-INPUT ./asset/img/SimTurn90.pdf
-INPUT ./asset/img/SimTurn90.pdf
-INPUT ./asset/img/SimTurn90.pdf
-INPUT extractbb -B cropbox -O asset/img/SimTurn90.pdf
+INPUT ./asset/img/SimTurn180Valve3.pdf
+INPUT ./asset/img/SimTurn180Valve3.pdf
+INPUT ./asset/img/SimTurn180Valve3.pdf
+INPUT extractbb -B cropbox -O asset/img/SimTurn180Valve3.pdf
+INPUT ./asset/img/SimValve3LatentDim.pdf
+INPUT ./asset/img/SimValve3LatentDim.pdf
+INPUT ./asset/img/SimValve3LatentDim.pdf
+INPUT extractbb -B cropbox -O asset/img/SimValve3LatentDim.pdf
+INPUT ./asset/img/SimTurn180Other.pdf
+INPUT ./asset/img/SimTurn180Other.pdf
+INPUT ./asset/img/SimTurn180Other.pdf
+INPUT extractbb -B cropbox -O asset/img/SimTurn180Other.pdf
+INPUT ./asset/img/ValveTrajectory_SimTurn180Other.pdf
+INPUT ./asset/img/ValveTrajectory_SimTurn180Other.pdf
+INPUT ./asset/img/ValveTrajectory_SimTurn180Other.pdf
+INPUT extractbb -B cropbox -O asset/img/ValveTrajectory_SimTurn180Other.pdf
+INPUT ./asset/img/HardwareTurn180.pdf
+INPUT ./asset/img/HardwareTurn180.pdf
+INPUT ./asset/img/HardwareTurn180.pdf
+INPUT extractbb -B cropbox -O asset/img/HardwareTurn180.pdf
 INPUT ./thesis.bbl
 INPUT ./thesis.bbl
 INPUT thesis.bbl

@@ -19,9 +19,9 @@
 \contentsline {subsection}{\numberline {4.2}事前方策の収集}{11}{}%
 \contentsline {subsection}{\numberline {4.3}低次元行動空間の抽出}{12}{}%
 \contentsline {subsection}{\numberline {4.4}実験1：同一形状のバルブの学習(シミュレーション)}{12}{}%
-\contentsline {subsection}{\numberline {4.5}実験2：異なる形状のバルブへの転移(シミュレーション)}{12}{}%
-\contentsline {subsection}{\numberline {4.6}実験3：同一形状のバルブの学習(実機)}{14}{}%
-\contentsline {subsection}{\numberline {4.7}実験4：異なる形状のバルブへの転移(実機)}{14}{}%
-\contentsline {section}{\numberline {5}議論}{15}{}%
-\contentsline {section}{\numberline {6}結論}{16}{}%
-\contentsline {section}{参考文献}{16}{}%
+\contentsline {subsection}{\numberline {4.5}実験2：異なる形状のバルブへの転移(シミュレーション)}{13}{}%
+\contentsline {subsection}{\numberline {4.6}実験3：同一形状のバルブの学習(実機)}{16}{}%
+\contentsline {subsection}{\numberline {4.7}実験4：異なる形状のバルブへの転移(実機)}{16}{}%
+\contentsline {section}{\numberline {5}議論}{17}{}%
+\contentsline {section}{\numberline {6}結論}{18}{}%
+\contentsline {section}{参考文献}{18}{}%

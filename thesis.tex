@@ -242,7 +242,7 @@ VAEを用いることで非線形な次元圧縮を行うことができ，義�
 \subsection{低次元行動空間の抽出}
 
 行動空間が高次元であるタスクの学習にあたって，事前データを用いてその学習を効率化させるアプローチが一般的である．Pertschらが提案したSPiRLは事前に収集したデータを基に，行動の系列を時間的・空間的に圧縮することで低次元の行動空間を獲得する．さらに各状態において低次元行動空間のどの行動が選択されるかについての事前分布も同時に学習することで強化学習を高速化する\cite{pertsch2021accelerating}．本研究ではSPiRLをベースとしたアルゴリズムを利用する．\\
-SPiRLの学習に用いるデータセット$\mathcal{D}=\{\tau_i\}^{N}_{i=1}$はN個の系列から構成されており，各系列は$\tau_i = {(s_0, a_0), . . . ,(s_T, a_T)}$といったように$T$個の状態行動対で構成される．低次元行動空間の抽出には，これらのデータセットから連続したH個の行動をサンプリングし，その行動列$\boldsymbol{a}=\{a_l,a_{l+1},a_{l+H}\}$について，前節のようにELBOを最大化することで学習する．このとき，式\ref{ELBO}における右辺第2項のKLダイバージェンスには以下のように再構成項と正規化項を調整するために$\beta$という係数がかけられている．
+SPiRLの学習に用いるデータセット$\mathcal{D}=\{\tau_i\}^{N}_{i=1}$はN個の系列から構成されており，各系列は$\tau_i = {(s_0, a_0), . . . ,(s_T, a_T)}$といったように$T$個の状態行動対で構成される．低次元行動空間の抽出には，これらのデータセットから連続したH個の行動をサンプリングし，その行動列$\boldsymbol{a}=\{a_l,a_{l+1},a_{l+H}\}$について，前節のようにELBOを最大化することで学習する．このとき，式(\ref{ELBO})における右辺第2項のKLダイバージェンスには以下のように再構成項と正規化項を調整するために$\beta$という係数がかけられている．
 \begin{eqnarray} 
   \label{SPiRL_ELBO}
   \log p(\boldsymbol{a}) &\geq& \mathbb{E}_q [\log p(\boldsymbol{a}|z)  -\beta(\log{q(z|\boldsymbol{a})} - \log{p(z)})]
@@ -353,6 +353,21 @@ SPiRLの学習に用いるデータセット$\mathcal{D}=\{\tau_i\}^{N}_{i=1}$�
 ・SACのみ・ファインチューニングと比較．\\
 ・Ablation Studyとして，潜在変数の次元を変えて比較．\\
 必要な図表：3種類の条件を比較した図・Ablation studyの図．\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=16cm]
+       {asset/img/SimTurn180Valve3.pdf}
+  \caption{4種類のバルブにおける報酬とバルブ誤差の推移．}
+  \label{dclaw_mujoco}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=16cm]
+       {asset/img/SimValve3LatentDim.pdf}
+  \caption{4種類のバルブにおける報酬とバルブ誤差の推移．}
+  \label{dclaw_mujoco}
+\end{figure}
 
 \subsection{実験2：異なる形状のバルブへの転移(シミュレーション)}
 ・データの存在するものと異なる形状のバルブについて学習．\\
@@ -362,8 +377,17 @@ SPiRLの学習に用いるデータセット$\mathcal{D}=\{\tau_i\}^{N}_{i=1}$�
 \begin{figure}[H]
   \centering
   \includegraphics[width=16cm]
-       {asset/img/SimTurn90.pdf}
+       {asset/img/SimTurn180Other.pdf}
   \caption{4種類のバルブにおける報酬とバルブ誤差の推移．}
+  \label{dclaw_mujoco}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=16cm]
+       {asset/img/ValveTrajectory_SimTurn180Other.pdf}
+  \caption{事前方策と異なるバルブにおける学習中獲得した方策のバルブ角度誤差の軌道．}
   \label{dclaw_mujoco}
 \end{figure}
 ・Ablation Studyとして，潜在変数の次元を変えて比較．\\
@@ -372,15 +396,23 @@ SPiRLの学習に用いるデータセット$\mathcal{D}=\{\tau_i\}^{N}_{i=1}$�
 \subsection{実験3：同一形状のバルブの学習(実機)}
 ・提案したフレームワークをSimlation to realに利用できることを示す．
 ・まず，3本足バルブについてシミュレータで学習した方策をそのまま持っていくとどうなるかをまず．\\
-・SACのみ・ファインチューニングと比較．\\
+・SACのみと比較．\\
 ・報酬の学習曲線・バルブ誤差の曲線を表示．
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=16cm]
+       {asset/img/HardwareTurn180.pdf}
+  \caption{4種類のバルブにおける報酬とバルブ誤差の推移．}
+  \label{dclaw_mujoco}
+\end{figure}
 
 \subsection{実験4：異なる形状のバルブへの転移(実機)}
 ・まず，3本足バルブについてシミュレータで学習した方策をそのまま持っていくとどうなるかをまず．\\
-・4種類のバルブについてSACのみ・ファインチューニングと比較．\\
+・4種類のバルブについてSACのみと比較．\\
 必要な図表：
-・3本足の方策を4種類のバルブにそのまま持っていったときのバルブの誤差の表
-・4種類のバルブについて3種類の条件を比較した図．\\
+・3本足の方策を4種類のバルブにそのまま持っていったときのバルブの誤差の起動と比較
+・4種類のバルブについて2種類の条件を比較した図．\\
 実機ならではの図がほしい．
 
 
