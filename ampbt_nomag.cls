@@ -1,10 +1,10 @@
 %%
-%% ampbt.cls: 京都大学情報学研究科システム科学専攻 特別研究報告書 クラスファイル
+%% ampbt.cls: 京都大学工学部情報学科数理工学コース 特別研究報告書 クラスファイル
 %%
 \NeedsTeXFormat{pLaTeX2e}
-\ProvidesClass{ampbt}[2019/04/01 Bachelor's Thesis Class for KUAMP]
+\ProvidesClass{ampbt_nomag}[2019/04/01 Bachelor's Thesis Class for KUAMP]
 
-\def\amp@ptsize{11pt}
+\def\amp@ptsize{12pt}
 
 \newif\if@amp@chapter
 
@@ -54,6 +54,16 @@
   \endgroup
 }
 
+\newcommand{\nendo}[2]{%
+  \begingroup
+  \ifydir\let\Kansuji\relax\fi
+  \ifnum#1>2019  % もうさすがに令和以外は卒業せんやろ．
+    \ifnum#2>3\relax 令和\Kansuji{\the\numexpr#1-2018}年度\fi
+    \ifnum#2<4\relax 令和\Kansuji{\the\numexpr#1-2018-1}年度\fi
+  \fi
+  \endgroup
+}
+
 \newcommand{\jaytogengou}[1]{%
   \ifnum#1>2019\relax 令和\,\,\rotatebox[origin=c]{90}{\the\numexpr#1-2018}\,\,年度\fi
   \ifnum#1=2019\relax 令和元年度\fi
@@ -87,41 +97,45 @@
 
 
 \newcommand{\@makecover}{%
-  \begin{center}
-    \vspace*{12mm}
-    \Large{特別研究報告書}\\
-    \vspace*{20mm}%
-
-    {\LARGE
-      \ifx\amp@titlefirst\@empty　\else\amp@titlefirst\fi\\
-      \ifx\amp@titlesecond\@empty　\else\amp@titlesecond\fi\\
-      \ifx\amp@titlethird\@empty　\else\amp@titlethird\fi\\}
-  \end{center}
-  \vspace*{20mm}
-  \begin{center}
-    {\Large
-      \begin{tabular}{rcl}
+    { % title
+        \centering
+        \LARGE
+        \vspace*{24pt}
+        \textbf{修士論文} \\
+        \vspace*{24pt}
+        \ifx\amp@titlefirst\@empty　\else\amp@titlefirst\fi \\
+        \ifx\amp@titlesecond\@empty　\else\amp@titlesecond\fi \\
+        \ifx\amp@titlethird\@empty　\else\amp@titlethird\fi \\
+        \vspace*{24pt}
+    } 
+    % superviser
+    \begin{center}
+        \LARGE
+        \begin{tabular}{rcl}
         指導教員&~~~&\amp@svfirstname　\amp@svfirsttitle\\
-        　　　　&~~~&\amp@svsecondname　\amp@svsecondtitle\\
-        　　　　&~~~&\amp@svthirdname　\amp@svthirdtitle
-      \end{tabular}
+            &~~~&\amp@svsecondname　\amp@svsecondtitle\\
+            &~~~&\amp@svthirdname　\amp@svthirdtitle
+        \end{tabular}
+    \end{center}
+    \vfill
+    \vspace*{24pt}
+    { % affiliation
+        \centering
+        \LARGE
+        京都大学大学院情報学研究科\\
+        システム科学専攻修士課程\\
+        \nendo{\amp@entranceyear}{\amp@entrancemonth}入学\\
     }
-  \end{center}
-  \vspace*{17mm}
-  \begin{center}
-    {\Large
-      京都大学情報学研究科\\
-      システム科学専攻\\
-      \nengetsu{\amp@entranceyear}{\amp@entrancemonth}入学\\
-
-      \vspace{14mm}%
-
-      {\huge\amp@authorfamily　\amp@authorfirst}\\
-      \vspace{14mm}
-      \nengetsu{\amp@submissionyear}{\amp@submissionmonth}\amp@submissionday 日提出
-      \vspace{5mm}
+    \vfill
+    \vspace{84pt}
+    {   % name and date
+        \centering
+        \LARGE
+        \amp@authorfamily　\amp@authorfirst\\
+        \vspace{24pt}
+        \nengetsu{\amp@submissionyear}{\amp@submissionmonth}提出 \\
     }
-  \end{center}
+    \vfill
 }
 
 \newcommand{\makecover}{%
