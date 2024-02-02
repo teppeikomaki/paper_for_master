@@ -15,78 +15,80 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}多指ハンドロボットの低次元制御}{2}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}接触の多いタスクの制御}{2}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4}事前データを用いた強化学習}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3}手法}{3}{}\protected@file@percent }
-\newlabel{sec-method}{{3}{3}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}強化学習(整理し直す)}{3}{}\protected@file@percent }
-\newlabel{state_value1}{{1}{3}{}{}{}}
-\newlabel{state_value2}{{2}{3}{}{}{}}
-\newlabel{bellman_equation}{{3}{3}{}{}{}}
-\newlabel{bellman_operator}{{4}{3}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}手法}{4}{}\protected@file@percent }
+\newlabel{sec-method}{{3}{4}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}強化学習(整理し直す)}{4}{}\protected@file@percent }
+\newlabel{state_value1}{{1}{4}{}{}{}}
+\newlabel{state_value2}{{2}{4}{}{}{}}
+\newlabel{bellman_equation}{{3}{4}{}{}{}}
+\newlabel{bellman_operator}{{4}{4}{}{}{}}
 \citation{SAC1}
 \citation{SAC2}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}エントロピー最大強化学習}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Soft Actor-Critic法（分割する）}{4}{}\protected@file@percent }
-\newlabel{sac_state_value}{{5}{4}{}{}{}}
-\newlabel{sac_act_value}{{6}{4}{}{}{}}
-\newlabel{sac_v_q}{{7}{4}{}{}{}}
-\newlabel{sac_policy_iter}{{8}{4}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}エントロピー最大強化学習}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Soft Actor-Critic法（分割する）}{5}{}\protected@file@percent }
+\newlabel{sac_state_value}{{5}{5}{}{}{}}
 \citation{DoubleQ}
+\newlabel{sac_act_value}{{6}{6}{}{}{}}
+\newlabel{sac_v_q}{{7}{6}{}{}{}}
+\newlabel{sac_policy_iter}{{8}{6}{}{}{}}
+\newlabel{sac_value_loss}{{9}{6}{}{}{}}
+\newlabel{sac_policy_loss}{{12}{6}{}{}{}}
 \citation{SAC2}
-\newlabel{sac_value_loss}{{9}{5}{}{}{}}
-\newlabel{sac_policy_loss}{{12}{5}{}{}{}}
-\newlabel{reparameterization}{{13}{5}{}{}{}}
-\newlabel{sac_policy_loss_reparameterized}{{14}{5}{}{}{}}
-\newlabel{sac_policy_gradient}{{15}{5}{}{}{}}
-\newlabel{temparature_tunning}{{16}{5}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}変分自己符号化器}{5}{}\protected@file@percent }
+\newlabel{reparameterization}{{13}{7}{}{}{}}
+\newlabel{sac_policy_loss_reparameterized}{{14}{7}{}{}{}}
+\newlabel{sac_policy_gradient}{{15}{7}{}{}{}}
+\newlabel{temparature_tunning}{{16}{7}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}変分自己符号化器}{7}{}\protected@file@percent }
+\newlabel{latent_val}{{17}{7}{}{}{}}
 \citation{pertsch2021accelerating}
-\newlabel{latent_val}{{17}{6}{}{}{}}
-\newlabel{ELBO}{{18}{6}{}{}{}}
-\newlabel{VAE_latent_val}{{19}{6}{}{}{}}
-\newlabel{ELBO_RHS_1}{{20}{6}{}{}{}}
-\newlabel{ELBO_RHS_2}{{21}{6}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}低次元行動空間の抽出}{7}{}\protected@file@percent }
-\newlabel{SPiRL_ELBO}{{22}{7}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}提案するフレームワーク}{7}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces 提案手法の概要}}{8}{}\protected@file@percent }
+\newlabel{ELBO}{{18}{8}{}{}{}}
+\newlabel{VAE_latent_val}{{19}{8}{}{}{}}
+\newlabel{ELBO_RHS_1}{{20}{8}{}{}{}}
+\newlabel{ELBO_RHS_2}{{21}{8}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}低次元行動空間の抽出}{8}{}\protected@file@percent }
+\newlabel{SPiRL_ELBO}{{22}{9}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}提案するフレームワーク}{9}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces 提案手法の概要}}{10}{}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{schematic_figure}{{1}{8}{}{}{}}
+\newlabel{schematic_figure}{{1}{10}{}{}{}}
 \citation{ahn2020robel}
 \citation{ahn2020robel}
 \citation{ahn2020robel}
-\@writefile{toc}{\contentsline {section}{\numberline {4}実験}{9}{}\protected@file@percent }
-\newlabel{sec-experiment}{{4}{9}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}実験のセットアップ}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}3指ハンドロボット：D'Claw}{9}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces D'Clawの概要．FF-10$\sim $Thumb-32までの角度を$\theta ^1_{\textrm  {j}}\sim \theta ^9_{\textrm  {j}}$とし，$\boldsymbol  {\theta }_{\textrm  {j}}=(\theta ^1_{\textrm  {j}},\cdots  ,\theta ^9_{\textrm  {j}})$とおく．また，バルブの角度を$\theta ^{\textrm  {v}}$のように表記する．\cite  {ahn2020robel}より引用．}}{9}{}\protected@file@percent }
-\newlabel{dclaw_structure}{{2}{9}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}実験}{11}{}\protected@file@percent }
+\newlabel{sec-experiment}{{4}{11}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}実験のセットアップ}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}3指ハンドロボット：D'Claw}{11}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces D'Clawの概要．FF-10$\sim $Thumb-32までの角度を$\theta ^1_{\textrm  {j}}\sim \theta ^9_{\textrm  {j}}$とし，$\boldsymbol  {\theta }_{\textrm  {j}}=(\theta ^1_{\textrm  {j}},\cdots  ,\theta ^9_{\textrm  {j}})$とおく．また，バルブの角度を$\theta ^{\textrm  {v}}$のように表記する．\cite  {ahn2020robel}より引用．}}{11}{}\protected@file@percent }
+\newlabel{dclaw_structure}{{2}{11}{}{}{}}
 \citation{Mujoco}
-\newlabel{state}{{24}{10}{}{}{}}
-\newlabel{reward}{{25}{10}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}シミュレーション環境}{10}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces 物理エンジンMuJoCo上でのD'Claw．}}{10}{}\protected@file@percent }
-\newlabel{dclaw_mujoco}{{3}{10}{}{}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}実機の設定}{11}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces D'Clawの実機．}}{11}{}\protected@file@percent }
-\newlabel{dclaw_hardware}{{4}{11}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}事前方策の収集}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}低次元行動空間の抽出}{12}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}実験1：同一形状のバルブの学習(シミュレーション)}{12}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces 4種類のバルブにおける報酬とバルブ誤差の推移．}}{12}{}\protected@file@percent }
-\newlabel{dclaw_mujoco}{{5}{12}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces 4種類のバルブにおける報酬とバルブ誤差の推移．}}{13}{}\protected@file@percent }
-\newlabel{dclaw_mujoco}{{6}{13}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}実験2：異なる形状のバルブへの転移(シミュレーション)}{13}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces 4種類のバルブにおける報酬とバルブ誤差の推移．}}{14}{}\protected@file@percent }
-\newlabel{dclaw_mujoco}{{7}{14}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces 事前方策と異なるバルブにおける学習中獲得した方策のバルブ角度誤差の軌道．}}{15}{}\protected@file@percent }
-\newlabel{dclaw_mujoco}{{8}{15}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}実験3：同一形状のバルブの学習(実機)}{16}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces 4種類のバルブにおける報酬とバルブ誤差の推移．}}{16}{}\protected@file@percent }
-\newlabel{dclaw_mujoco}{{9}{16}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.7}実験4：異なる形状のバルブへの転移(実機)}{16}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}議論}{17}{}\protected@file@percent }
-\newlabel{sec-discussion}{{5}{17}{}{}{}}
+\newlabel{state}{{24}{12}{}{}{}}
+\newlabel{reward}{{25}{12}{}{}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}シミュレーション環境}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}実機の設定}{12}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces 物理エンジンMuJoCo上でのD'Claw．}}{13}{}\protected@file@percent }
+\newlabel{dclaw_mujoco}{{3}{13}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}事前方策の収集}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}低次元行動空間の抽出}{13}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces D'Clawの実機．}}{14}{}\protected@file@percent }
+\newlabel{dclaw_hardware}{{4}{14}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}実験1：シミュレーション上における事前方策と同形状のバルブの学習}{14}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces 事前方策と同形状のバルブ学習における報酬とバルブ誤差の推移．}}{15}{}\protected@file@percent }
+\newlabel{LeaningCurve_Valve3_Sim}{{5}{15}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces 事前方策と同形状のバルブ学習における獲得方策のバルブの回転角度誤差の軌道．}}{16}{}\protected@file@percent }
+\newlabel{ValveTrajectory_Valve3_Sim}{{6}{16}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces 事前方策と同形状のバルブ学習における低次元行動空間の次元の比較．}}{17}{}\protected@file@percent }
+\newlabel{SimValve3LatentDim}{{7}{17}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}実験2：シミュレーション上における事前方策と異なる形状のバルブの学習}{17}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces 3本足バルブで獲得した方策の異なる形状のバルブへの転移．}}{18}{}\protected@file@percent }
+\newlabel{Transfer_in_Sim}{{8}{18}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces 事前方策と異なる形状のバルブ学習における報酬とバルブの回転角度誤差の推移．}}{19}{}\protected@file@percent }
+\newlabel{LeaningCurve_Other_Sim}{{9}{19}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces 事前方策と異なる形状のバルブ学習における獲得方策のバルブの回転角度誤差の軌道．}}{20}{}\protected@file@percent }
+\newlabel{ValveTrajectory_Other_Sim}{{10}{20}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}実験3：同一形状のバルブの学習(実機)}{21}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces 4種類のバルブにおける報酬とバルブ誤差の推移．}}{21}{}\protected@file@percent }
+\newlabel{dclaw_mujoco}{{11}{21}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.7}実験4：異なる形状のバルブへの転移(実機)}{21}{}\protected@file@percent }
 \bibstyle{junsrt}
 \bibdata{thesis}
 \bibcite{RLBook}{1}
@@ -98,10 +100,10 @@
 \bibcite{singh2020parrot}{7}
 \bibcite{pertsch2021accelerating}{8}
 \bibcite{SAC1}{9}
+\@writefile{toc}{\contentsline {section}{\numberline {5}結論}{22}{}\protected@file@percent }
+\newlabel{sec-conclusion}{{5}{22}{}{}{}}
+\@writefile{toc}{\contentsline {section}{参考文献}{22}{}\protected@file@percent }
 \bibcite{SAC2}{10}
 \bibcite{DoubleQ}{11}
-\@writefile{toc}{\contentsline {section}{\numberline {6}結論}{18}{}\protected@file@percent }
-\newlabel{sec-conclusion}{{6}{18}{}{}{}}
-\@writefile{toc}{\contentsline {section}{参考文献}{18}{}\protected@file@percent }
 \bibcite{Mujoco}{12}
-\gdef \@abspage@last{25}
+\gdef \@abspage@last{29}
