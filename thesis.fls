@@ -63,6 +63,8 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/float/float.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/float/float.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/doublestroke/dsfont.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/doublestroke/dsfont.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/placeins/placeins.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/placeins/placeins.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/caption/subcaption.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/caption/subcaption.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption.sty
@@ -188,10 +190,10 @@ INPUT ./asset/img/SimValve3LatentDim.pdf
 INPUT ./asset/img/SimValve3LatentDim.pdf
 INPUT ./asset/img/SimValve3LatentDim.pdf
 INPUT extractbb -B cropbox -O asset/img/SimValve3LatentDim.pdf
-INPUT ./asset/img/SimTurn180Other_z3_vs_Transfer.pdf
-INPUT ./asset/img/SimTurn180Other_z3_vs_Transfer.pdf
-INPUT ./asset/img/SimTurn180Other_z3_vs_Transfer.pdf
-INPUT extractbb -B cropbox -O asset/img/SimTurn180Other_z3_vs_Transfer.pdf
+INPUT ./asset/img/SimTurn180OtherTransfer.pdf
+INPUT ./asset/img/SimTurn180OtherTransfer.pdf
+INPUT ./asset/img/SimTurn180OtherTransfer.pdf
+INPUT extractbb -B cropbox -O asset/img/SimTurn180OtherTransfer.pdf
 INPUT ./asset/img/SimTurn180Other.pdf
 INPUT ./asset/img/SimTurn180Other.pdf
 INPUT ./asset/img/SimTurn180Other.pdf
