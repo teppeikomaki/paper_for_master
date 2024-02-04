@@ -21,6 +21,6 @@
 \contentsline {subsection}{\numberline {4.4}実験1：シミュレーション上における事前方策と同形状のバルブの学習}{14}{}%
 \contentsline {subsection}{\numberline {4.5}実験2：シミュレーション上における事前方策と異なる形状のバルブの学習}{16}{}%
 \contentsline {subsection}{\numberline {4.6}実験3：同一形状のバルブの学習(実機)}{21}{}%
-\contentsline {subsection}{\numberline {4.7}実験4：異なる形状のバルブへの転移(実機)}{21}{}%
-\contentsline {section}{\numberline {5}結論}{22}{}%
-\contentsline {section}{参考文献}{22}{}%
+\contentsline {subsection}{\numberline {4.7}実験4：異なる形状のバルブへの転移(実機)}{22}{}%
+\contentsline {section}{\numberline {5}結論}{24}{}%
+\contentsline {section}{参考文献}{24}{}%

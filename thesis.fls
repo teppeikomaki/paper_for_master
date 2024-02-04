@@ -202,10 +202,18 @@ INPUT ./asset/img/ValveTrajectory_SimTurn180Other.pdf
 INPUT ./asset/img/ValveTrajectory_SimTurn180Other.pdf
 INPUT ./asset/img/ValveTrajectory_SimTurn180Other.pdf
 INPUT extractbb -B cropbox -O asset/img/ValveTrajectory_SimTurn180Other.pdf
-INPUT ./asset/img/HardwareTurn180.pdf
-INPUT ./asset/img/HardwareTurn180.pdf
-INPUT ./asset/img/HardwareTurn180.pdf
-INPUT extractbb -B cropbox -O asset/img/HardwareTurn180.pdf
+INPUT ./asset/img/HardwareTurn180Valve3Transfer.pdf
+INPUT ./asset/img/HardwareTurn180Valve3Transfer.pdf
+INPUT ./asset/img/HardwareTurn180Valve3Transfer.pdf
+INPUT extractbb -B cropbox -O asset/img/HardwareTurn180Valve3Transfer.pdf
+INPUT ./asset/img/HardwareTurn180Valve3.pdf
+INPUT ./asset/img/HardwareTurn180Valve3.pdf
+INPUT ./asset/img/HardwareTurn180Valve3.pdf
+INPUT extractbb -B cropbox -O asset/img/HardwareTurn180Valve3.pdf
+INPUT ./asset/img/ValveTrajectory_HardwareTurn180Valve3.pdf
+INPUT ./asset/img/ValveTrajectory_HardwareTurn180Valve3.pdf
+INPUT ./asset/img/ValveTrajectory_HardwareTurn180Valve3.pdf
+INPUT extractbb -B cropbox -O asset/img/ValveTrajectory_HardwareTurn180Valve3.pdf
 INPUT ./thesis.bbl
 INPUT ./thesis.bbl
 INPUT thesis.bbl
